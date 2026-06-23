@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chỉnh sửa Sản phẩm — Admin Asia</title>
+
+  <link rel="stylesheet" href="/FE/assets/css/variables.css">
+  <link rel="stylesheet" href="/FE/assets/css/reset.css">
+  <link rel="stylesheet" href="/FE/assets/css/typography.css">
+  <link rel="stylesheet" href="/FE/assets/css/layout.css">
+  <link rel="stylesheet" href="/FE/assets/css/admin.css">
+  <link rel="stylesheet" href="/FE/assets/css/components.css">
+  <link rel="stylesheet" href="/FE/assets/css/utilities.css">
+</head>
+<body>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="logo-text">Asia <span>Admin</span></div>
+      <nav class="admin-nav">
+        <a href="/FE/admin/dashboard.html" class="admin-nav-link">Dashboard</a>
+        <a href="/FE/admin/products.html" class="admin-nav-link is-active">Sản phẩm</a>
+        <a href="/FE/admin/services.html" class="admin-nav-link">Dịch vụ</a>
+        <a href="/FE/admin/consultations.html" class="admin-nav-link">Tư vấn</a>
+        <a href="/FE/admin/contacts.html" class="admin-nav-link">Liên hệ</a>
+        <a href="/FE/admin/settings.html" class="admin-nav-link">Cài đặt</a>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="admin-topbar">
+        <div class="admin-topbar-title">Chỉnh sửa sản phẩm</div>
+      </div>
+
+      <section class="admin-content">
+        <div class="admin-form-card">
+          <div class="section-head section-head--compact">
+            <div>
+              <h2 class="section-title">Thông tin sản phẩm</h2>
+              <p class="section-subtitle">Nhập tên, giá, mô tả và danh mục cho sản phẩm.</p>
+            </div>
+          </div>
+
+          <form>
+            <div class="field-grid">
+              <div class="field">
+                <label for="product-name">Tên sản phẩm</label>
+                <input id="product-name" type="text" placeholder="Nhập tên sản phẩm">
+              </div>
+              <div class="field">
+                <label for="product-category">Danh mục</label>
+                <select id="product-category">
+                  <option>Tủ nhựa</option>
+                  <option>Bàn ăn</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="product-price">Giá</label>
+                <input id="product-price" type="text" placeholder="3.200.000₫">
+              </div>
+              <div class="field">
+                <label for="product-status">Trạng thái</label>
+                <select id="product-status">
+                  <option>Hiện</option>
+                  <option>Ẩn</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="product-description">Mô tả</label>
+              <textarea id="product-description" rows="4" placeholder="Mô tả ngắn về sản phẩm"></textarea>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-solid">Lưu sản phẩm</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>

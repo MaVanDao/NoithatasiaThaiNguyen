@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập Admin — Nội Thất Asia Thái Nguyên</title>
+
+  <link rel="stylesheet" href="/FE/assets/css/variables.css">
+  <link rel="stylesheet" href="/FE/assets/css/reset.css">
+  <link rel="stylesheet" href="/FE/assets/css/typography.css">
+  <link rel="stylesheet" href="/FE/assets/css/layout.css">
+  <link rel="stylesheet" href="/FE/assets/css/account.css">
+  <link rel="stylesheet" href="/FE/assets/css/admin.css">
+  <link rel="stylesheet" href="/FE/assets/css/components.css">
+  <link rel="stylesheet" href="/FE/assets/css/utilities.css">
+</head>
+<body class="admin-login-page">
+
+  <div class="auth-card">
+    <div class="logo"><img src="/FE/assets/images/logo/logo.png" alt="Logo Nội Thất Asia"></div>
+    <h1 class="auth-title">Đăng nhập Admin</h1>
+    <p class="auth-subtitle">Đăng nhập để quản lý dữ liệu, đơn hàng và cài đặt website.</p>
+
+    <form id="admin-login-form">
+      <div class="field">
+        <label for="admin-phone">Số điện thoại</label>
+        <input id="admin-phone" name="phone" type="text" placeholder="Nhập số điện thoại">
+      </div>
+      <div class="field password-field">
+        <label for="admin-password">Mật khẩu</label>
+        <input id="admin-password" name="password" type="password" placeholder="Nhập mật khẩu">
+        <button type="button" class="password-toggle" aria-label="Hiện mật khẩu">👁</button>
+      </div>
+      <div class="form-submit-row">
+        <button type="submit" class="btn btn-solid btn-block">Đăng nhập</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="/FE/assets/js/utils/helpers.js"></script>
+  <script src="/FE/assets/js/store/auth.store.js"></script>
+  <script>
+    document.querySelectorAll('.password-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const inp = btn.closest('.password-field').querySelector('input');
+        inp.type = inp.type === 'password' ? 'text' : 'password';
+      });
+    });
+  </script>
+</body>
+</html>

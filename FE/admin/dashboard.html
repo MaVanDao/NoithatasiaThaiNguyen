@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng điều khiển Admin — Nội Thất Asia</title>
+
+  <link rel="stylesheet" href="/FE/assets/css/variables.css">
+  <link rel="stylesheet" href="/FE/assets/css/reset.css">
+  <link rel="stylesheet" href="/FE/assets/css/typography.css">
+  <link rel="stylesheet" href="/FE/assets/css/layout.css">
+  <link rel="stylesheet" href="/FE/assets/css/admin.css">
+  <link rel="stylesheet" href="/FE/assets/css/components.css">
+  <link rel="stylesheet" href="/FE/assets/css/utilities.css">
+</head>
+<body>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="logo-text">Asia <span>Admin</span></div>
+      <nav class="admin-nav">
+        <a href="/FE/admin/dashboard.html" class="admin-nav-link is-active">Dashboard</a>
+        <a href="/FE/admin/products.html" class="admin-nav-link">Sản phẩm</a>
+        <a href="/FE/admin/services.html" class="admin-nav-link">Dịch vụ</a>
+        <a href="/FE/admin/consultations.html" class="admin-nav-link">Tư vấn</a>
+        <a href="/FE/admin/contacts.html" class="admin-nav-link">Liên hệ</a>
+        <a href="/FE/admin/settings.html" class="admin-nav-link">Cài đặt</a>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="admin-topbar">
+        <div class="admin-topbar-title">Dashboard</div>
+      </div>
+
+      <section class="admin-content">
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-card-label">Đơn hàng mới</div>
+            <div class="stat-card-value">128</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Sản phẩm</div>
+            <div class="stat-card-value">54</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Dịch vụ</div>
+            <div class="stat-card-value">23</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-label">Liên hệ mới</div>
+            <div class="stat-card-value">19</div>
+          </div>
+        </div>
+
+        <div class="section-head section-head--compact">
+          <h2 class="section-title">Hoạt động gần đây</h2>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Ngày</th>
+                <th>Sự kiện</th>
+                <th>Chi tiết</th>
+                <th>Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>23/06/2026</td>
+                <td>Đơn hàng mới</td>
+                <td>KH đặt 1 sofa, 2 bàn ăn</td>
+                <td>Chờ xử lý</td>
+              </tr>
+              <tr>
+                <td>22/06/2026</td>
+                <td>Cập nhật sản phẩm</td>
+                <td>Sửa giá tủ nhựa</td>
+                <td>Hoàn thành</td>
+              </tr>
+              <tr>
+                <td>21/06/2026</td>
+                <td>Liên hệ mới</td>
+                <td>Yêu cầu tư vấn thiết kế phòng khách</td>
+                <td>Chờ liên hệ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>

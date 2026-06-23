@@ -122,6 +122,15 @@
 }
 @media (min-width:768px){ .account-content{ padding:36px; } }
 
+.account-page-main{ padding:40px 0; }
+.account-page-heading{ padding:24px 0 16px; }
+.account-page-heading .page-title{ margin-bottom:0; }
+.account-page-desc{ color:var(--gray-600); margin-top:12px; }
+.account-section-head{ margin-bottom:22px; }
+.account-section-head .section-title{ margin:0; }
+.account-section-head .section-description{ margin-top:10px; color:var(--gray-600); }
+.account-empty-state{ display:none; padding:28px; background:var(--gray-50); border-radius:var(--radius); text-align:center; color:var(--gray-600); }
+
 /* Mỗi dòng yêu cầu tư vấn/đặt hàng trong "Lịch sử của tôi" */
 .history-item{
   display:flex;

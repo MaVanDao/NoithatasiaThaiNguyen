@@ -39,7 +39,7 @@ Asia.ServiceListPage = {
 
     if (!items.length) {
       grid.innerHTML = `
-        <div class="state-box" style="grid-column:1/-1;">
+        <div class="state-box span-full">
           <div class="state-title">Chưa có dự án phù hợp</div>
           <p>Hãy quay lại sau để xem thêm các dự án mới.</p>
         </div>
@@ -59,7 +59,7 @@ Asia.ServiceListPage = {
 
     return `
       <div class="project-card">
-        <div class="project-card-img" data-detail-link="${detailUrl}" style="cursor:pointer; ${imageStyle}"></div>
+        <div class="project-card-img" data-detail-link="${detailUrl}" style="${imageStyle}"></div>
         <div class="project-card-body">
           <a href="${detailUrl}" class="project-card-name">${Asia.Helpers.escapeHtml(item.name)}</a>
           <button type="button" class="btn btn-solid btn-block"

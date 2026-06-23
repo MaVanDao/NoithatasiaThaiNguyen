@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý Liên hệ — Admin Asia</title>
+
+  <link rel="stylesheet" href="/FE/assets/css/variables.css">
+  <link rel="stylesheet" href="/FE/assets/css/reset.css">
+  <link rel="stylesheet" href="/FE/assets/css/typography.css">
+  <link rel="stylesheet" href="/FE/assets/css/layout.css">
+  <link rel="stylesheet" href="/FE/assets/css/admin.css">
+  <link rel="stylesheet" href="/FE/assets/css/components.css">
+  <link rel="stylesheet" href="/FE/assets/css/utilities.css">
+</head>
+<body>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="logo-text">Asia <span>Admin</span></div>
+      <nav class="admin-nav">
+        <a href="/FE/admin/dashboard.html" class="admin-nav-link">Dashboard</a>
+        <a href="/FE/admin/products.html" class="admin-nav-link">Sản phẩm</a>
+        <a href="/FE/admin/services.html" class="admin-nav-link">Dịch vụ</a>
+        <a href="/FE/admin/consultations.html" class="admin-nav-link">Tư vấn</a>
+        <a href="/FE/admin/contacts.html" class="admin-nav-link is-active">Liên hệ</a>
+        <a href="/FE/admin/settings.html" class="admin-nav-link">Cài đặt</a>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="admin-topbar">
+        <div class="admin-topbar-title">Liên hệ</div>
+      </div>
+
+      <section class="admin-content">
+        <div class="section-head section-head--compact">
+          <div>
+            <h2 class="section-title">Thông tin liên hệ</h2>
+            <p class="section-subtitle">Danh sách tin nhắn và yêu cầu từ trang Liên hệ.</p>
+          </div>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Ngày</th>
+                <th>Họ tên</th>
+                <th>Email</th>
+                <th>Tiêu đề</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>23/06/2026</td>
+                <td>Nguyễn Văn C</td>
+                <td>nv.c@example.com</td>
+                <td>Hỏi giá bộ sofa</td>
+                <td>Mới</td>
+                <td>
+                  <button class="admin-action-btn" aria-label="Xem">👁</button>
+                  <button class="admin-action-btn" aria-label="Xóa">🗑</button>
+                </td>
+              </tr>
+              <tr>
+                <td>22/06/2026</td>
+                <td>Phạm Thị D</td>
+                <td>pt.d@example.com</td>
+                <td>Yêu cầu báo giá</td>
+                <td>Đã phản hồi</td>
+                <td>
+                  <button class="admin-action-btn" aria-label="Xem">👁</button>
+                  <button class="admin-action-btn" aria-label="Xóa">🗑</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>

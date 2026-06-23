@@ -104,7 +104,7 @@ Asia.HomePage = {
     const detailUrl = Asia.Routes.PRODUCTS.DETAIL + "?slug=" + p.slug;
     return `
       <div class="product-card">
-        <div class="product-card-img" data-detail-link="${detailUrl}" style="cursor:pointer;">
+        <div class="product-card-img" data-detail-link="${detailUrl}">
           Ảnh sản phẩm
           <button type="button" class="wishlist-btn${isFav ? " is-active" : ""}" data-wishlist-id="${p.id}" aria-label="Yêu thích">♥</button>
         </div>
@@ -130,7 +130,7 @@ Asia.HomePage = {
 
     return `
       <div class="project-card">
-        <div class="project-card-img" data-detail-link="${detailUrl}" style="cursor:pointer; ${imageStyle}"></div>
+        <div class="project-card-img" data-detail-link="${detailUrl}" style="${imageStyle}"></div>
         <div class="project-card-body">
           <a href="${detailUrl}" class="project-card-name">${Asia.Helpers.escapeHtml(s.name)}</a>
           <button type="button" class="btn btn-solid btn-block"

@@ -17,12 +17,19 @@
 .section{ padding:64px 0; }
 @media (min-width:1024px){ .section{ padding:96px 0; } }
 
+.section--compact{ padding:12px 0 40px; }
+.section--gray{ background:var(--gray-50); }
+
 .section-head{
   display:flex;
   flex-direction:column;
   gap:4px;
   margin-bottom:32px;
 }
+.section-head--compact{ margin-bottom:18px; }
+
+.section--compact{ padding:12px 0 40px; }
+.section--gray{ background:var(--gray-50); }
 .section-head-row{
   display:flex;
   align-items:flex-end;
@@ -64,6 +71,7 @@
   grid-template-columns:1fr;
   gap:36px;
 }
+.layout-bottom-space{ padding-bottom:80px; }
 @media (min-width:1024px){
   .catalog-layout.has-sidebar{
     grid-template-columns:240px 1fr;
@@ -100,6 +108,7 @@
   .form-grid{ grid-template-columns:1fr 1fr; }
   .form-grid .full{ grid-column:1/-1; }
 }
+.span-full{ grid-column:1/-1; }
 
 /* Footer-grid: ĐÃ DỜI sang components.css (gộp chung với toàn bộ
    CSS footer khác — xem phần FOOTER trong components.css) */

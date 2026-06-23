@@ -7,9 +7,9 @@ Asia.ServiceDetailPage = {
 
     if (!item) {
       document.body.innerHTML = `
-        <div class="container" style="padding:80px 24px; text-align:center;">
+        <div class="container" style="text-align:center; padding:80px 24px;">
           <h1 class="page-title">Không tìm thấy dự án</h1>
-          <a href="/FE/pages/index.html" class="btn btn-solid" style="margin-top:18px;">Về trang chủ</a>
+          <a href="/FE/pages/index.html" class="btn btn-solid mt-16">Về trang chủ</a>
         </div>
       `;
       return;

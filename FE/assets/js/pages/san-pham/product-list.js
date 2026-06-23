@@ -102,7 +102,7 @@ Asia.ProductListPage = {
 
     if (!pageItems.length) {
       grid.innerHTML = `
-        <div class="state-box" style="grid-column:1/-1;">
+        <div class="state-box span-full">
           <div class="state-title">Chưa có sản phẩm phù hợp</div>
           <p>Hãy thử kéo thanh giá rộng hơn.</p>
         </div>`;
@@ -121,7 +121,7 @@ Asia.ProductListPage = {
     const detailUrl = Asia.Routes.PRODUCTS.DETAIL + "?slug=" + p.slug;
     return `
       <div class="product-card">
-        <div class="product-card-img" data-detail-link="${detailUrl}" style="cursor:pointer;">
+        <div class="product-card-img" data-detail-link="${detailUrl}">
           Ảnh sản phẩm
           <button type="button" class="wishlist-btn${isFav ? " is-active" : ""}" data-wishlist-id="${p.id}" aria-label="Yêu thích">♥</button>
         </div>

@@ -71,8 +71,12 @@ Asia.ConsultationPage = {
   _toggleCategoryRow(type) {
     const productRow = document.getElementById("product-category-row");
     const serviceRow = document.getElementById("service-category-row");
-    if (productRow) productRow.style.display = type === "order" ? "block" : "none";
-    if (serviceRow) serviceRow.style.display = type === "design" ? "block" : "none";
+    if (productRow) {
+      productRow.classList.toggle("hidden", type !== "order");
+    }
+    if (serviceRow) {
+      serviceRow.classList.toggle("hidden", type !== "design");
+    }
   },
 
   _wireSubmit() {

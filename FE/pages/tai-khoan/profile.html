@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hồ sơ của tôi — Nội Thất Asia Thái Nguyên</title>
+<meta name="description" content="Trang hồ sơ khách hàng của Nội Thất Asia Thái Nguyên.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/FE/assets/css/variables.css">
+<link rel="stylesheet" href="/FE/assets/css/reset.css">
+<link rel="stylesheet" href="/FE/assets/css/typography.css">
+<link rel="stylesheet" href="/FE/assets/css/layout.css">
+<link rel="stylesheet" href="/FE/assets/css/components.css">
+<link rel="stylesheet" href="/FE/assets/css/animations.css">
+<link rel="stylesheet" href="/FE/assets/css/utilities.css">
+<link rel="stylesheet" href="/FE/assets/css/responsive.css">
+</head>
+<body>
+<header id="site-header"></header>
+<div class="container account-page-main">
+  <nav class="breadcrumb" aria-label="Đường dẫn">
+    <a href="/FE/pages/index.html">Trang Chủ</a>
+    <span class="sep">›</span>
+    <span class="current">Hồ Sơ Của Tôi</span>
+  </nav>
+  <section class="account-page-heading">
+    <h1 class="page-title">Hồ Sơ Của Tôi</h1>
+    <p class="account-page-desc">Quản lý thông tin cá nhân và tài khoản của bạn.</p>
+  </section>
+  <section class="account-layout">
+    <aside class="account-tabs">
+      <a href="/FE/pages/tai-khoan/profile.html" class="account-tab is-active">Hồ sơ của tôi</a>
+      <a href="/FE/pages/tai-khoan/change-password.html" class="account-tab">Đổi mật khẩu</a>
+      <a href="/FE/pages/tai-khoan/consultations.html" class="account-tab">Lịch sử yêu cầu</a>
+      <a href="/FE/pages/tai-khoan/wishlist.html" class="account-tab">Yêu thích</a>
+    </aside>
+    <section class="account-content">
+      <div class="section-head account-section-head">
+        <h2 class="section-title">Thông tin cá nhân</h2>
+        <p class="section-description">Cập nhật thông tin của bạn để nhận tư vấn nhanh nhất.</p>
+      </div>
+      <form class="contact-form" id="profile-form">
+        <div class="field-grid">
+          <div class="field">
+            <label for="profile-full-name">Họ và tên</label>
+            <input id="profile-full-name" name="full_name" type="text" placeholder="Nguyễn Văn A">
+          </div>
+          <div class="field">
+            <label for="profile-phone">Số điện thoại</label>
+            <input id="profile-phone" name="phone" type="text" placeholder="0987 654 321">
+          </div>
+        </div>
+        <div class="field">
+          <label for="profile-email">Email</label>
+          <input id="profile-email" name="email" type="email" placeholder="example@mail.com">
+        </div>
+        <div class="field">
+          <label for="profile-address">Địa chỉ</label>
+          <input id="profile-address" name="address" type="text" placeholder="Số nhà, đường, phường, thành phố">
+        </div>
+        <div class="form-submit-row">
+          <button type="submit" class="btn btn-solid">Lưu thay đổi</button>
+        </div>
+      </form>
+    </section>
+  </section>
+</div>
+<footer id="site-footer"></footer>
+<script src="/FE/assets/js/constants/app-config.js"></script>
+<script src="/FE/assets/js/constants/roles.js"></script>
+<script src="/FE/assets/js/constants/routes.js"></script>
+<script src="/FE/assets/js/constants/product-categories.js"></script>
+<script src="/FE/assets/js/constants/service-categories.js"></script>
+<script src="/FE/assets/js/constants/api-endpoints.js"></script>
+<script src="/FE/assets/js/utils/storage.js"></script>
+<script src="/FE/assets/js/utils/phone.js"></script>
+<script src="/FE/assets/js/utils/validator.js"></script>
+<script src="/FE/assets/js/utils/formatter.js"></script>
+<script src="/FE/assets/js/utils/debounce.js"></script>
+<script src="/FE/assets/js/utils/helpers.js"></script>
+<script src="/FE/assets/js/api/client.js"></script>
+<script src="/FE/assets/js/store/auth.store.js"></script>
+<script src="/FE/assets/js/store/user.store.js"></script>
+<script src="/FE/assets/js/store/app.store.js"></script>
+<script src="/FE/assets/js/store/wishlist.store.js"></script>
+<script src="/FE/assets/js/components/toast.js"></script>
+<script src="/FE/assets/js/components/modal.js"></script>
+<script src="/FE/assets/js/components/consult-form.js"></script>
+<script src="/FE/assets/js/components/scroll-reveal.js"></script>
+<script src="/FE/assets/js/components/hotline-button.js"></script>
+<script src="/FE/assets/js/components/zalo-widget.js"></script>
+<script src="/FE/assets/js/components/messenger-widget.js"></script>
+<script src="/FE/assets/js/components/navbar.js"></script>
+<script src="/FE/assets/js/components/mobile-menu.js"></script>
+<script src="/FE/assets/js/components/footer.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const user = Asia.UserStore.getUser() || {};
+    document.getElementById('profile-full-name').value = user.full_name || '';
+    document.getElementById('profile-phone').value = user.phone || '';
+    document.getElementById('profile-email').value = user.email || '';
+    document.getElementById('profile-address').value = user.address || '';
+    document.getElementById('profile-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const updatedUser = {
+        full_name: document.getElementById('profile-full-name').value,
+        phone: document.getElementById('profile-phone').value,
+        email: document.getElementById('profile-email').value,
+        address: document.getElementById('profile-address').value,
+      };
+      Asia.UserStore.setUser(updatedUser);
+      alert('Thông tin đã được lưu.');
+    });
+  });
+</script>
+</body>
+</html>

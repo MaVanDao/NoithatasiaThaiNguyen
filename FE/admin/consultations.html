@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý Tư vấn — Admin Asia</title>
+
+  <link rel="stylesheet" href="/FE/assets/css/variables.css">
+  <link rel="stylesheet" href="/FE/assets/css/reset.css">
+  <link rel="stylesheet" href="/FE/assets/css/typography.css">
+  <link rel="stylesheet" href="/FE/assets/css/layout.css">
+  <link rel="stylesheet" href="/FE/assets/css/admin.css">
+  <link rel="stylesheet" href="/FE/assets/css/components.css">
+  <link rel="stylesheet" href="/FE/assets/css/utilities.css">
+</head>
+<body>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="logo-text">Asia <span>Admin</span></div>
+      <nav class="admin-nav">
+        <a href="/FE/admin/dashboard.html" class="admin-nav-link">Dashboard</a>
+        <a href="/FE/admin/products.html" class="admin-nav-link">Sản phẩm</a>
+        <a href="/FE/admin/services.html" class="admin-nav-link">Dịch vụ</a>
+        <a href="/FE/admin/consultations.html" class="admin-nav-link is-active">Tư vấn</a>
+        <a href="/FE/admin/contacts.html" class="admin-nav-link">Liên hệ</a>
+        <a href="/FE/admin/settings.html" class="admin-nav-link">Cài đặt</a>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="admin-topbar">
+        <div class="admin-topbar-title">Tư vấn</div>
+      </div>
+
+      <section class="admin-content">
+        <div class="section-head section-head--compact">
+          <div>
+            <h2 class="section-title">Yêu cầu tư vấn</h2>
+            <p class="section-subtitle">Theo dõi và quản lý các yêu cầu tư vấn từ khách hàng.</p>
+          </div>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Ngày</th>
+                <th>Khách hàng</th>
+                <th>Điện thoại</th>
+                <th>Nội dung</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>23/06/2026</td>
+                <td>Nguyễn Văn A</td>
+                <td>0988 123 456</td>
+                <td>Tư vấn nội thất phòng khách</td>
+                <td>Chưa liên hệ</td>
+                <td>
+                  <button class="admin-action-btn" aria-label="Xem">👁</button>
+                  <button class="admin-action-btn" aria-label="Xóa">🗑</button>
+                </td>
+              </tr>
+              <tr>
+                <td>22/06/2026</td>
+                <td>Trần Thị B</td>
+                <td>0912 654 321</td>
+                <td>Thiết kế phòng ngủ con</td>
+                <td>Đang xử lý</td>
+                <td>
+                  <button class="admin-action-btn" aria-label="Xem">👁</button>
+                  <button class="admin-action-btn" aria-label="Xóa">🗑</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>

@@ -270,6 +270,7 @@ body.menu-open{ overflow:hidden; }
   background-position:center;
   background-image:linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.65)), var(--hero-img);
 }
+.hero--dark{ --hero-img:linear-gradient(135deg,#3a3a3a 0%,#1a1a1a 100%); }
 .hero-content{ position:relative; z-index:2; max-width:680px; padding-top:60px; }
 .hero h1{
   font-family:var(--font-head);
@@ -322,6 +323,7 @@ body.menu-open{ overflow:hidden; }
   color:var(--gray-400);
   font-size:13px;
   font-family:var(--font-body);
+  cursor:pointer;
 }
 .product-card-body{ padding:16px; display:flex; flex-direction:column; gap:8px; flex:1; }
 .product-card-name{ font-family:var(--font-body); font-weight:700; font-size:16px; color:var(--black); }
@@ -354,6 +356,7 @@ body.menu-open{ overflow:hidden; }
 .view-all:hover{ text-decoration:underline; }
 
 /* ---------- Ô DỰ ÁN THI CÔNG ---------- */
+.service-card,
 .project-card{
   background:var(--white);
   border-radius:var(--radius);
@@ -362,6 +365,7 @@ body.menu-open{ overflow:hidden; }
   display:flex;
   flex-direction:column;
 }
+.service-card-img,
 .project-card-img{
   width:100%;
   aspect-ratio:4/3;
@@ -369,9 +373,13 @@ body.menu-open{ overflow:hidden; }
   display:flex; align-items:center; justify-content:center;
   color:var(--gray-400);
   font-size:13px;
+  cursor:pointer;
 }
+.service-card-body,
 .project-card-body{ padding:16px; display:flex; flex-direction:column; gap:10px; flex:1; }
+.service-card-name,
 .project-card-name{ font-family:var(--font-head); font-weight:700; font-size:17px; color:var(--black); }
+.service-card .btn,
 .project-card .btn{ margin-top:auto; }
 
 /* ---------- CTA BANNER nền đen cuối trang Thi công ---------- */
@@ -416,6 +424,68 @@ body.menu-open{ overflow:hidden; }
 .filter-title{ font-family:var(--font-head); font-weight:700; font-size:14px; margin-bottom:14px; }
 .filter-range{ width:100%; accent-color:var(--red); }
 .filter-range-values{ display:flex; justify-content:space-between; font-size:12.5px; color:var(--gray-600); margin-top:6px; }
+
+.filter-panel{
+  background:var(--white);
+  border:1px solid var(--gray-200);
+  border-radius:var(--radius);
+  padding:22px;
+}
+.filter-panel-title{
+  font-family:var(--font-head);
+  font-weight:700;
+  font-size:15px;
+  color:var(--black);
+  margin-bottom:18px;
+}
+.filter-panel-item{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:18px;
+}
+.filter-panel-item:last-child{ margin-bottom:0; }
+.filter-panel-item label{
+  font-size:13.5px;
+  color:var(--gray-600);
+}
+.filter-panel-item input[type="checkbox"],
+.filter-panel-item input[type="radio"]{
+  accent-color:var(--red);
+}
+
+.gallery-grid{
+  display:grid;
+  gap:18px;
+  grid-template-columns:repeat(2,1fr);
+}
+@media (min-width:1024px){ .gallery-grid{ grid-template-columns:repeat(3,1fr); } }
+.gallery-item{
+  background:var(--white);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.gallery-item img{
+  width:100%;
+  display:block;
+  object-fit:cover;
+}
+.gallery-item-body{
+  padding:16px;
+}
+.gallery-item-title{
+  font-family:var(--font-head);
+  font-weight:700;
+  font-size:16px;
+  color:var(--black);
+  margin-bottom:8px;
+}
+.gallery-item-description{
+  color:var(--gray-600);
+  font-size:14px;
+  line-height:1.6;
+}
 
 .pagination{ display:flex; justify-content:center; align-items:center; gap:8px; margin-top:44px; }
 .page-btn{
@@ -473,6 +543,7 @@ body.menu-open{ overflow:hidden; }
   aspect-ratio:4/3;
 }
 .map-embed iframe{ width:100%; height:100%; border:0; }
+.map-frame{ border:0; border-radius:10px; display:block; width:100%; max-width:100%; }
 
 .contact-layout{
   grid-template-columns:1.1fr 1fr;
@@ -523,6 +594,24 @@ body.menu-open{ overflow:hidden; }
 .field input:focus, .field textarea:focus, .field select:focus{ border-color:var(--red); }
 .field textarea{ resize:vertical; min-height:120px; }
 .form-submit-row{ margin-top:8px; }
+
+.consultation-page{ padding-bottom:24px; }
+.page-intro{ text-align:center; max-width:680px; margin:0 auto; }
+.intro-copy{ color:var(--gray-600); font-size:15.5px; margin-top:18px; max-width:640px; margin-left:auto; margin-right:auto; }
+.consultation-benefits{ display:flex; justify-content:center; gap:32px; flex-wrap:wrap; margin-top:32px; }
+.consultation-benefit{ display:flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--black); }
+.consultation-benefit-icon{ font-size:20px; line-height:1; }
+.form-wrapper{ max-width:680px; padding-bottom:64px; margin:0 auto; }
+.consultation-form-section{ margin-top:18px; }
+.consultation-form-field{ margin-top:14px; }
+.direct-contact-wrap{ text-align:center; margin-top:36px; }
+.direct-contact-label{ color:var(--gray-600); font-size:13.5px; text-transform:uppercase; letter-spacing:.08em; font-weight:700; }
+.direct-contact-buttons{ display:flex; justify-content:center; gap:14px; margin-top:16px; flex-wrap:wrap; }
+.consultation-success{ padding-top:18px; }
+.consultation-success-icon{ font-size:48px; color:#2E7D32; }
+.consultation-success-title{ margin-top:12px; }
+.btn.btn-zalo{ background:var(--color-zalo); color:var(--white); }
+.btn.btn-messenger{ background:var(--color-messenger); color:var(--white); }
 
 /* ── Radio Group ── */
 .radio-group {
@@ -883,15 +972,53 @@ body.menu-open{ overflow:hidden; }
 .related-section{ padding:48px 0 64px; border-top:1px solid var(--gray-100); }
 
 /* ---------- EMPTY STATE / ERROR STATE ---------- */
-.state-box{ text-align:center; padding:64px 24px; color:var(--gray-600); }
-.state-box .state-title{
+.state-box,
+.empty-state,
+.error-state{
+  text-align:center;
+  padding:64px 24px;
+  color:var(--gray-600);
+}
+.state-box .state-title,
+.empty-state .state-title,
+.error-state .state-title{
   font-family:var(--font-head);
   font-weight:700;
   font-size:18px;
   color:var(--black);
   margin-bottom:8px;
 }
-.state-box .btn{ margin-top:20px; }
+.state-box .btn,
+.empty-state .btn,
+.error-state .btn{ margin-top:20px; }
+
+.loading-grid{
+  display:grid;
+  gap:18px;
+  grid-template-columns:1fr;
+}
+@media (min-width:768px){ .loading-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1280px){ .loading-grid{ grid-template-columns:repeat(3,1fr); } }
+.loading-card{
+  background:var(--white);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.loading-card .loading-media{
+  width:100%;
+  aspect-ratio:4/3;
+  border-radius:12px;
+}
+.loading-card .loading-line{
+  width:100%;
+  height:16px;
+  border-radius:8px;
+}
+.loading-card .loading-line.short{ width:70%; }
 
 /* ---------- MODAL (Form "Liên hệ đặt hàng" / "Tư vấn ngay") ---------- */
 .modal-overlay{

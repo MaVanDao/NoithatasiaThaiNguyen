@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sản phẩm yêu thích — Nội Thất Asia Thái Nguyên</title>
+<meta name="description" content="Danh sách sản phẩm yêu thích của bạn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/FE/assets/css/variables.css">
+<link rel="stylesheet" href="/FE/assets/css/reset.css">
+<link rel="stylesheet" href="/FE/assets/css/typography.css">
+<link rel="stylesheet" href="/FE/assets/css/layout.css">
+<link rel="stylesheet" href="/FE/assets/css/components.css">
+<link rel="stylesheet" href="/FE/assets/css/animations.css">
+<link rel="stylesheet" href="/FE/assets/css/utilities.css">
+<link rel="stylesheet" href="/FE/assets/css/responsive.css">
+</head>
+<body>
+<header id="site-header"></header>
+<div class="container account-page-main">
+  <nav class="breadcrumb" aria-label="Đường dẫn">
+    <a href="/FE/pages/index.html">Trang Chủ</a>
+    <span class="sep">›</span>
+    <span class="current">Yêu thích</span>
+  </nav>
+  <section class="account-page-heading">
+    <h1 class="page-title">Sản phẩm yêu thích</h1>
+    <p class="account-page-desc">Quản lý danh sách sản phẩm bạn đã lưu lại.</p>
+  </section>
+  <section class="account-layout">
+    <aside class="account-tabs">
+      <a href="/FE/pages/tai-khoan/profile.html" class="account-tab">Hồ sơ của tôi</a>
+      <a href="/FE/pages/tai-khoan/change-password.html" class="account-tab">Đổi mật khẩu</a>
+      <a href="/FE/pages/tai-khoan/consultations.html" class="account-tab">Lịch sử yêu cầu</a>
+      <a href="/FE/pages/tai-khoan/wishlist.html" class="account-tab is-active">Yêu thích</a>
+    </aside>
+    <section class="account-content">
+      <div class="section-head account-section-head">
+        <h2 class="section-title">Sản phẩm yêu thích</h2>
+        <p class="section-description">Xem lại các sản phẩm bạn đã đánh dấu yêu thích.</p>
+      </div>
+      <div id="wishlist-items" class="field-grid"></div>
+      <div id="wishlist-empty" class="account-empty-state">
+        Bạn chưa có sản phẩm yêu thích nào. <a href="/FE/pages/index.html" style="color:var(--red); font-weight:700;">Xem sản phẩm</a>
+      </div>
+    </section>
+  </section>
+</div>
+<footer id="site-footer"></footer>
+<script src="/FE/assets/js/constants/app-config.js"></script>
+<script src="/FE/assets/js/constants/roles.js"></script>
+<script src="/FE/assets/js/constants/routes.js"></script>
+<script src="/FE/assets/js/constants/product-categories.js"></script>
+<script src="/FE/assets/js/constants/service-categories.js"></script>
+<script src="/FE/assets/js/constants/api-endpoints.js"></script>
+<script src="/FE/assets/js/utils/storage.js"></script>
+<script src="/FE/assets/js/utils/phone.js"></script>
+<script src="/FE/assets/js/utils/validator.js"></script>
+<script src="/FE/assets/js/utils/formatter.js"></script>
+<script src="/FE/assets/js/utils/debounce.js"></script>
+<script src="/FE/assets/js/utils/helpers.js"></script>
+<script src="/FE/assets/js/api/client.js"></script>
+<script src="/FE/assets/js/store/auth.store.js"></script>
+<script src="/FE/assets/js/store/user.store.js"></script>
+<script src="/FE/assets/js/store/app.store.js"></script>
+<script src="/FE/assets/js/store/wishlist.store.js"></script>
+<script src="/FE/assets/js/components/toast.js"></script>
+<script src="/FE/assets/js/components/modal.js"></script>
+<script src="/FE/assets/js/components/consult-form.js"></script>
+<script src="/FE/assets/js/components/scroll-reveal.js"></script>
+<script src="/FE/assets/js/components/hotline-button.js"></script>
+<script src="/FE/assets/js/components/zalo-widget.js"></script>
+<script src="/FE/assets/js/components/messenger-widget.js"></script>
+<script src="/FE/assets/js/components/navbar.js"></script>
+<script src="/FE/assets/js/components/mobile-menu.js"></script>
+<script src="/FE/assets/js/components/footer.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const wishlist = Asia.WishlistStore.getAll();
+    const itemsContainer = document.getElementById('wishlist-items');
+    const emptyState = document.getElementById('wishlist-empty');
+    if (!wishlist.length) {
+      emptyState.classList.add('is-visible');
+      itemsContainer.classList.add('hidden');
+      return;
+    }
+    emptyState.classList.remove('is-visible');
+    itemsContainer.classList.remove('hidden');
+    wishlist.forEach(id => {
+      const item = document.createElement('div');
+      item.className = 'state-box';
+      item.innerHTML = `<div><div class="state-title">Sản phẩm ID: ${id}</div><div class="text-muted mt-8">Thêm vào danh sách yêu thích</div></div><button class="btn btn-border" type="button" data-remove-id="${id}">Xóa</button>`;
+      itemsContainer.appendChild(item);
+    });
+    itemsContainer.addEventListener('click', (event) => {
+      const btn = event.target.closest('[data-remove-id]');
+      if (!btn) return;
+      const id = Number(btn.dataset.removeId);
+      Asia.WishlistStore.toggle(id);
+      btn.closest('.state-box').remove();
+      if (!Asia.WishlistStore.getAll().length) {
+        emptyState.style.display = 'block';
+        itemsContainer.style.display = 'none';
+      }
+    });
+  });
+</script>
+</body>
+</html>

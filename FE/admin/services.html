@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý Dịch vụ — Admin Asia</title>
+
+  <link rel="stylesheet" href="/FE/assets/css/variables.css">
+  <link rel="stylesheet" href="/FE/assets/css/reset.css">
+  <link rel="stylesheet" href="/FE/assets/css/typography.css">
+  <link rel="stylesheet" href="/FE/assets/css/layout.css">
+  <link rel="stylesheet" href="/FE/assets/css/admin.css">
+  <link rel="stylesheet" href="/FE/assets/css/components.css">
+  <link rel="stylesheet" href="/FE/assets/css/utilities.css">
+</head>
+<body>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="logo-text">Asia <span>Admin</span></div>
+      <nav class="admin-nav">
+        <a href="/FE/admin/dashboard.html" class="admin-nav-link">Dashboard</a>
+        <a href="/FE/admin/products.html" class="admin-nav-link">Sản phẩm</a>
+        <a href="/FE/admin/services.html" class="admin-nav-link is-active">Dịch vụ</a>
+        <a href="/FE/admin/consultations.html" class="admin-nav-link">Tư vấn</a>
+        <a href="/FE/admin/contacts.html" class="admin-nav-link">Liên hệ</a>
+        <a href="/FE/admin/settings.html" class="admin-nav-link">Cài đặt</a>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="admin-topbar">
+        <div class="admin-topbar-title">Dịch vụ</div>
+      </div>
+
+      <section class="admin-content">
+        <div class="section-head section-head--compact">
+          <div>
+            <h2 class="section-title">Danh sách dịch vụ</h2>
+            <p class="section-subtitle">Quản lý dịch vụ thi công và thiết kế nội thất.</p>
+          </div>
+          <a href="/FE/admin/service-edit.html" class="btn btn-solid">Thêm dịch vụ</a>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tên dịch vụ</th>
+                <th>Loại</th>
+                <th>Giá tham khảo</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>D001</td>
+                <td>Thiết kế phòng khách</td>
+                <td>Thiết kế</td>
+                <td>5.000.000₫</td>
+                <td>Hiện</td>
+                <td>
+                  <button class="admin-action-btn" aria-label="Sửa">✎</button>
+                  <button class="admin-action-btn" aria-label="Xóa">🗑</button>
+                </td>
+              </tr>
+              <tr>
+                <td>D008</td>
+                <td>Thi công phòng ngủ</td>
+                <td>Thi công</td>
+                <td>12.000.000₫</td>
+                <td>Hiện</td>
+                <td>
+                  <button class="admin-action-btn" aria-label="Sửa">✎</button>
+                  <button class="admin-action-btn" aria-label="Xóa">🗑</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>

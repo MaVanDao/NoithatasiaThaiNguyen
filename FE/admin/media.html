@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý Media — Admin Asia</title>
+
+  <link rel="stylesheet" href="/FE/assets/css/variables.css">
+  <link rel="stylesheet" href="/FE/assets/css/reset.css">
+  <link rel="stylesheet" href="/FE/assets/css/typography.css">
+  <link rel="stylesheet" href="/FE/assets/css/layout.css">
+  <link rel="stylesheet" href="/FE/assets/css/admin.css">
+  <link rel="stylesheet" href="/FE/assets/css/components.css">
+  <link rel="stylesheet" href="/FE/assets/css/utilities.css">
+</head>
+<body>
+
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="logo-text">Asia <span>Admin</span></div>
+      <nav class="admin-nav">
+        <a href="/FE/admin/dashboard.html" class="admin-nav-link">Dashboard</a>
+        <a href="/FE/admin/products.html" class="admin-nav-link">Sản phẩm</a>
+        <a href="/FE/admin/services.html" class="admin-nav-link">Dịch vụ</a>
+        <a href="/FE/admin/consultations.html" class="admin-nav-link">Tư vấn</a>
+        <a href="/FE/admin/contacts.html" class="admin-nav-link">Liên hệ</a>
+        <a href="/FE/admin/settings.html" class="admin-nav-link">Cài đặt</a>
+      </nav>
+    </aside>
+
+    <main>
+      <div class="admin-topbar">
+        <div class="admin-topbar-title">Media</div>
+      </div>
+
+      <section class="admin-content">
+        <div class="section-head section-head--compact">
+          <div>
+            <h2 class="section-title">Kho media</h2>
+            <p class="section-subtitle">Quản lý ảnh, video và nội dung media dùng cho website.</p>
+          </div>
+          <a href="#" class="btn btn-solid">Tải lên mới</a>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tên file</th>
+                <th>Loại</th>
+                <th>Kích thước</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>M001</td>
+                <td>banner-home.jpg</td>
+                <td>Ảnh</td>
+                <td>420 KB</td>
+                <td>
+                  <button class="admin-action-btn" aria-label="Xem">👁</button>
+                  <button class="admin-action-btn" aria-label="Xóa">🗑</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>

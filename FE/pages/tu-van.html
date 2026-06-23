@@ -17,69 +17,37 @@
 <link rel="stylesheet" href="/FE/assets/css/animations.css">
 <link rel="stylesheet" href="/FE/assets/css/utilities.css">
 <link rel="stylesheet" href="/FE/assets/css/responsive.css">
-
-<style>
-  /* Radio group: 2 cột trên laptop, 1 cột trên mobile */
-  .radio-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 8px;
-  }
-  .radio-option {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14.5px;
-    font-weight: 600;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-  }
-  .radio-option input[type="radio"] {
-    flex-shrink: 0;
-    width: 17px;
-    height: 17px;
-    margin: 0;
-    cursor: pointer;
-    accent-color: #CC0000;
-  }
-  @media (max-width: 600px) {
-    .radio-group {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
 </head>
 <body>
 
 <header id="site-header"></header>
 
-<div class="section" style="padding-bottom:24px;">
-  <div class="container" style="text-align:center; max-width:680px;">
+<div class="section consultation-page">
+  <div class="container page-intro">
     <h1 class="page-title reveal">Tư Vấn Nội Thất Miễn Phí Tận Nơi</h1>
-    <p style="color:var(--gray-600); margin-top:18px; font-size:15.5px;" class="reveal">
+    <p class="intro-copy reveal">
       Để lại thông tin, đội ngũ Nội Thất Asia Thái Nguyên sẽ liên hệ tư vấn
       cho bạn trong thời gian sớm nhất.
     </p>
 
-    <div class="flex" style="justify-content:center; gap:32px; margin-top:32px; flex-wrap:wrap;">
-      <div class="flex" style="align-items:center; gap:8px;">
-        <span style="font-size:20px;">🆓</span>
-        <span style="font-size:14px; font-weight:700; color:var(--black);">Hoàn Toàn Miễn Phí</span>
+    <div class="consultation-benefits">
+      <div class="consultation-benefit">
+        <span class="consultation-benefit-icon">🆓</span>
+        <span>Hoàn Toàn Miễn Phí</span>
       </div>
-      <div class="flex" style="align-items:center; gap:8px;">
-        <span style="font-size:20px;">⚡</span>
-        <span style="font-size:14px; font-weight:700; color:var(--black);">Phản Hồi Trong 30 Phút</span>
+      <div class="consultation-benefit">
+        <span class="consultation-benefit-icon">⚡</span>
+        <span>Phản Hồi Trong 30 Phút</span>
       </div>
-      <div class="flex" style="align-items:center; gap:8px;">
-        <span style="font-size:20px;">🏠</span>
-        <span style="font-size:14px; font-weight:700; color:var(--black);">Tư Vấn Tận Nơi</span>
+      <div class="consultation-benefit">
+        <span class="consultation-benefit-icon">🏠</span>
+        <span>Tư Vấn Tận Nơi</span>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container" style="max-width:680px; padding-bottom:64px;">
+<div class="container form-wrapper">
 
   <!-- ============ FORM ĐĂNG KÝ ============ -->
   <div id="tu-van-form-wrap">
@@ -101,7 +69,7 @@
       </div>
 
       <!-- Loại yêu cầu -->
-      <div class="field" style="margin-top:18px;">
+      <div class="field consultation-form-section">
         <label>Bạn cần hỗ trợ về *</label>
         <div class="radio-group">
           <label class="radio-option">
@@ -116,16 +84,16 @@
       </div>
 
       <!-- Dropdown danh mục -->
-      <div class="field" id="product-category-row" style="margin-top:14px;">
+      <div class="field consultation-form-field" id="product-category-row">
         <label>Sản phẩm quan tâm</label>
         <select id="field-product-category" name="product_category"></select>
       </div>
-      <div class="field" id="service-category-row" style="margin-top:14px; display:none;">
+      <div class="field consultation-form-field hidden" id="service-category-row">
         <label>Phòng muốn thiết kế</label>
         <select id="field-service-category" name="service_category"></select>
       </div>
 
-      <div class="field" style="margin-top:14px;">
+      <div class="field consultation-form-field">
         <label>Ghi chú thêm</label>
         <textarea id="field-note" name="note" placeholder="Mô tả không gian, phong cách mong muốn... (không bắt buộc)"></textarea>
       </div>
@@ -136,18 +104,18 @@
     </form>
 
     <!-- ============ HOẶC LIÊN HỆ TRỰC TIẾP ============ -->
-    <div style="text-align:center; margin-top:36px;">
-      <p style="color:var(--gray-600); font-size:13.5px; text-transform:uppercase; letter-spacing:.08em; font-weight:700;">
+    <div class="direct-contact-wrap">
+      <p class="direct-contact-label">
         Hoặc liên hệ trực tiếp
       </p>
-      <div class="flex" style="justify-content:center; gap:14px; margin-top:16px; flex-wrap:wrap;" id="direct-contact-buttons"></div>
+      <div id="direct-contact-buttons" class="direct-contact-buttons"></div>
     </div>
   </div>
 
   <!-- ============ TRẠNG THÁI THÀNH CÔNG (ẩn sẵn) ============ -->
-  <div id="tu-van-success" class="state-box" style="display:none;">
-    <div style="font-size:48px; color:#2E7D32;">✓</div>
-    <div class="state-title" style="margin-top:12px;">
+  <div id="tu-van-success" class="state-box hidden">
+    <div class="consultation-success-icon">✓</div>
+    <div class="state-title consultation-success-title">
       Cảm ơn <span data-success-name></span>!
     </div>
     <p>Chúng tôi sẽ liên hệ trong vòng 30 phút. Tự động về trang chủ sau <span data-countdown>10</span> giây.</p>
@@ -198,8 +166,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var wrap = document.getElementById("direct-contact-buttons");
   wrap.innerHTML =
     '<a href="' + Asia.Phone.toTelLink(cfg.HOTLINE) + '" class="btn btn-solid">📞 Gọi ' + Asia.Phone.format(cfg.HOTLINE) + '</a>' +
-    '<a href="' + cfg.ZALO_LINK + '" target="_blank" rel="noopener" class="btn" style="background:var(--color-zalo); color:var(--white);">Chat Zalo</a>' +
-    '<a href="' + cfg.MESSENGER_LINK + '" target="_blank" rel="noopener" class="btn" style="background:var(--color-messenger); color:var(--white);">Chat Messenger</a>';
+    '<a href="' + cfg.ZALO_LINK + '" target="_blank" rel="noopener" class="btn btn-zalo">Chat Zalo</a>' +
+    '<a href="' + cfg.MESSENGER_LINK + '" target="_blank" rel="noopener" class="btn btn-messenger">Chat Messenger</a>';
 });
 </script>
 </body>
