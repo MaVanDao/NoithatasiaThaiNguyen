@@ -47,6 +47,15 @@
 }
 .auth-footer-text a{ color:var(--red); font-weight:700; }
 
+/* Auth page tweaks: hide logo and adjust heading fonts per request */
+.auth-page .auth-card .logo{ display:none; }
+.auth-title{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:24px;
+}
+.auth-subtitle{ font-family:var(--font-body); font-size:15px; }
+
 /* 6 ô nhập mã OTP */
 .otp-input-row{
   display:flex;

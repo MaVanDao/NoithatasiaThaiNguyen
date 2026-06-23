@@ -17,6 +17,38 @@
 <link rel="stylesheet" href="/FE/assets/css/animations.css">
 <link rel="stylesheet" href="/FE/assets/css/utilities.css">
 <link rel="stylesheet" href="/FE/assets/css/responsive.css">
+
+<style>
+  /* Radio group: 2 cột trên laptop, 1 cột trên mobile */
+  .radio-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  .radio-option input[type="radio"] {
+    flex-shrink: 0;
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: #CC0000;
+  }
+  @media (max-width: 600px) {
+    .radio-group {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -71,17 +103,19 @@
       <!-- Loại yêu cầu -->
       <div class="field" style="margin-top:18px;">
         <label>Bạn cần hỗ trợ về *</label>
-        <div class="flex" style="flex-direction:column; gap:12px; margin-top:8px;">
-          <label class="flex" style="align-items:flex-start; gap:8px; font-size:14.5px; font-weight:600; cursor:pointer;">
-            <input type="radio" name="request_type" value="order" checked style="margin-top:3px; flex-shrink:0;"> Đặt hàng sản phẩm
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="request_type" value="order" checked>
+            Đặt hàng sản phẩm
           </label>
-          <label class="flex" style="align-items:flex-start; gap:8px; font-size:14.5px; font-weight:600; cursor:pointer;">
-            <input type="radio" name="request_type" value="design" style="margin-top:3px; flex-shrink:0;"> Tư vấn thiết kế &amp; thi công
+          <label class="radio-option">
+            <input type="radio" name="request_type" value="design">
+            Tư vấn thiết kế &amp; thi công
           </label>
         </div>
       </div>
 
-      <!-- Dropdown danh mục — chỉ hiện đúng 1 trong 2, tùy lựa chọn ở trên -->
+      <!-- Dropdown danh mục -->
       <div class="field" id="product-category-row" style="margin-top:14px;">
         <label>Sản phẩm quan tâm</label>
         <select id="field-product-category" name="product_category"></select>
@@ -100,6 +134,14 @@
         <button type="submit" class="btn btn-solid btn-block">Đăng Ký Tư Vấn Ngay</button>
       </div>
     </form>
+
+    <!-- ============ HOẶC LIÊN HỆ TRỰC TIẾP ============ -->
+    <div style="text-align:center; margin-top:36px;">
+      <p style="color:var(--gray-600); font-size:13.5px; text-transform:uppercase; letter-spacing:.08em; font-weight:700;">
+        Hoặc liên hệ trực tiếp
+      </p>
+      <div class="flex" style="justify-content:center; gap:14px; margin-top:16px; flex-wrap:wrap;" id="direct-contact-buttons"></div>
+    </div>
   </div>
 
   <!-- ============ TRẠNG THÁI THÀNH CÔNG (ẩn sẵn) ============ -->
@@ -116,7 +158,6 @@
 
 <footer id="site-footer"></footer>
 
-<!-- ============ SCRIPT — PHẢI đúng thứ tự này ============ -->
 <script src="/FE/assets/js/constants/app-config.js"></script>
 <script src="/FE/assets/js/constants/roles.js"></script>
 <script src="/FE/assets/js/constants/routes.js"></script>
@@ -150,5 +191,16 @@
 <script src="/FE/assets/js/components/footer.js"></script>
 
 <script src="/FE/assets/js/pages/consultation.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var cfg = Asia.AppStore.getSettings();
+  var wrap = document.getElementById("direct-contact-buttons");
+  wrap.innerHTML =
+    '<a href="' + Asia.Phone.toTelLink(cfg.HOTLINE) + '" class="btn btn-solid">📞 Gọi ' + Asia.Phone.format(cfg.HOTLINE) + '</a>' +
+    '<a href="' + cfg.ZALO_LINK + '" target="_blank" rel="noopener" class="btn" style="background:var(--color-zalo); color:var(--white);">Chat Zalo</a>' +
+    '<a href="' + cfg.MESSENGER_LINK + '" target="_blank" rel="noopener" class="btn" style="background:var(--color-messenger); color:var(--white);">Chat Messenger</a>';
+});
+</script>
 </body>
 </html>

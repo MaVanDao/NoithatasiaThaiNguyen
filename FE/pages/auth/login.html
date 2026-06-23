@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Đăng Nhập — Nội Thất Asia Thái Nguyên</title>
+	<link rel="stylesheet" href="/FE/assets/css/variables.css">
+	<link rel="stylesheet" href="/FE/assets/css/reset.css">
+	<link rel="stylesheet" href="/FE/assets/css/typography.css">
+	<link rel="stylesheet" href="/FE/assets/css/layout.css">
+	<link rel="stylesheet" href="/FE/assets/css/account.css">
+	<link rel="stylesheet" href="/FE/assets/css/components.css">
+	<link rel="stylesheet" href="/FE/assets/css/responsive.css">
+</head>
+<body class="auth-page">
+
+	<div class="auth-card">
+		<div class="logo"><img src="/FE/assets/images/logo/logo.png" alt="Logo" style="height:40px;"/></div>
+		<h2 class="auth-title">Đăng nhập</h2>
+		<p class="auth-subtitle">Đăng nhập để quản lý đơn hàng và theo dõi tư vấn</p>
+
+		<form id="login-form">
+			<div class="field">
+				<label for="login-phone">Số điện thoại</label>
+				<input id="login-phone" name="phone" type="text" placeholder="Nhập số điện thoại">
+			</div>
+			<div class="field password-field">
+				<label for="login-password">Mật khẩu</label>
+				<input id="login-password" name="password" type="password" placeholder="Nhập mật khẩu">
+				<button type="button" class="password-toggle" aria-label="Hiện mật khẩu">👁</button>
+			</div>
+
+			<div class="form-submit-row">
+				<button type="submit" class="btn btn-solid">Đăng nhập</button>
+			</div>
+		</form>
+
+		<div class="auth-footer-text">
+			<p>Chưa có tài khoản? <a href="/FE/pages/auth/register.html">Đăng ký</a></p>
+			<p><a href="/FE/pages/auth/forgot-password.html">Quên mật khẩu?</a></p>
+		</div>
+	</div>
+
+	<script src="/FE/assets/js/utils/helpers.js"></script>
+	<script src="/FE/assets/js/store/auth.store.js"></script>
+	<script>
+		// Minimal client-side interactivity: toggle password
+		document.querySelectorAll('.password-toggle').forEach(btn => {
+			btn.addEventListener('click', () => {
+				const input = btn.closest('.password-field').querySelector('input');
+				if (input.type === 'password') { input.type = 'text'; } else { input.type = 'password'; }
+			});
+		});
+	</script>
+</body>
+</html>
