@@ -1,0 +1,141 @@
+/* ============================================================
+   ACCOUNT — Dành riêng cho các trang Đăng nhập / Đăng ký / OTP /
+   Hồ sơ / Yêu thích của KHÁCH HÀNG. Chỉ trang nào trong khu vực
+   tài khoản mới cần load file này.
+   ============================================================ */
+
+/* Khung nền cho toàn trang đăng nhập/đăng ký — căn giữa màn hình */
+.auth-page{
+  min-height:calc(100vh - var(--header-h));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--gray-50);
+  padding:40px 20px;
+}
+
+/* Thẻ trắng chứa form đăng nhập/đăng ký */
+.auth-card{
+  width:100%;
+  max-width:420px;
+  background:var(--white);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-md);
+  border-top:4px solid var(--red);
+  padding:36px 28px;
+}
+.auth-card .logo{ justify-content:center; margin-bottom:24px; }
+.auth-title{
+  font-family:var(--font-head);
+  font-weight:800;
+  font-size:22px;
+  color:var(--black);
+  text-align:center;
+  margin-bottom:6px;
+}
+.auth-subtitle{
+  text-align:center;
+  color:var(--gray-600);
+  font-size:14px;
+  margin-bottom:28px;
+}
+.auth-footer-text{
+  text-align:center;
+  font-size:14px;
+  color:var(--gray-600);
+  margin-top:20px;
+}
+.auth-footer-text a{ color:var(--red); font-weight:700; }
+
+/* 6 ô nhập mã OTP */
+.otp-input-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin:24px 0;
+}
+.otp-input-row input{
+  width:44px;
+  height:52px;
+  text-align:center;
+  font-family:var(--font-head);
+  font-weight:700;
+  font-size:20px;
+  border:1px solid var(--gray-200);
+  border-radius:6px;
+}
+.otp-input-row input:focus{ border-color:var(--red); }
+.otp-resend{
+  text-align:center;
+  font-size:13.5px;
+  color:var(--gray-600);
+}
+.otp-resend button{ color:var(--red); font-weight:700; }
+
+/* Icon ẩn/hiện mật khẩu trong ô input */
+.password-field{ position:relative; }
+.password-toggle{
+  position:absolute;
+  right:12px; top:38px;
+  color:var(--gray-600);
+  font-size:14px;
+}
+
+/* ---------- Khu vực Tài Khoản: Hồ sơ / Yêu thích / Lịch sử ---------- */
+.account-layout{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:28px;
+  padding:32px 0 64px;
+}
+@media (min-width:1024px){
+  .account-layout{ grid-template-columns:240px 1fr; }
+}
+
+/* Menu các tab bên trái: Hồ sơ / Đổi mật khẩu / Lịch sử / Yêu thích */
+.account-tabs{ display:flex; flex-direction:column; gap:4px; }
+.account-tab{
+  padding:13px 16px;
+  border-radius:6px;
+  font-family:var(--font-head);
+  font-weight:700;
+  font-size:14px;
+  color:var(--gray-600);
+}
+.account-tab:hover{ background:var(--gray-50); }
+.account-tab.is-active{ background:var(--red); color:var(--white); }
+
+.account-content{
+  background:var(--white);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:28px 24px;
+}
+@media (min-width:768px){ .account-content{ padding:36px; } }
+
+/* Mỗi dòng yêu cầu tư vấn/đặt hàng trong "Lịch sử của tôi" */
+.history-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding:16px 0;
+  border-bottom:1px solid var(--gray-100);
+}
+.history-item:last-child{ border-bottom:none; }
+.history-item-name{ font-weight:700; font-size:14.5px; color:var(--black); }
+.history-item-date{ font-size:13px; color:var(--gray-600); margin-top:2px; }
+
+/* Nhãn trạng thái nhỏ: mới / đã liên hệ / hoàn tất / đã hủy */
+.status-tag{
+  font-family:var(--font-head);
+  font-weight:700;
+  font-size:12px;
+  padding:5px 12px;
+  border-radius:999px;
+  white-space:nowrap;
+}
+.status-tag.new{ background:#FDECEC; color:var(--red); }
+.status-tag.contacted{ background:#FFF4E0; color:#B5840B; }
+.status-tag.done{ background:#E7F5EC; color:#2E7D32; }
+.status-tag.cancelled{ background:var(--gray-100); color:var(--gray-600); }

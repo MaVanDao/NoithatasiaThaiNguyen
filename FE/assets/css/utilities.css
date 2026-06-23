@@ -1,0 +1,41 @@
+/* ============================================================
+   UTILITIES — Các class nhỏ, dùng nhanh, không gắn riêng cho 
+   component nào — thêm vào thẻ HTML khi cần chỉnh nhanh 1 chỗ
+   ============================================================ */
+
+/* Nút chiếm full chiều ngang (hay dùng trong card, trong form) */
+.btn-block{ width:100%; }
+
+/* Căn chữ */
+.text-center{ text-align:center; }
+.text-left{ text-align:left; }
+
+/* Ẩn phần tử khỏi màn hình nhưng vẫn đọc được bằng trình đọc màn hình
+   (dùng cho label/ghi chú chỉ dành cho người khiếm thị) */
+.visually-hidden{
+  position:absolute;
+  width:1px; height:1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+}
+
+/* Cắt chữ dài thành "..." trên 1 dòng */
+.truncate-1{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* Khoảng cách margin-top nhanh, không cần nhớ số px */
+.mt-8 { margin-top:8px; }
+.mt-16{ margin-top:16px; }
+.mt-24{ margin-top:24px; }
+.mt-32{ margin-top:32px; }
+
+/* Flexbox nhanh */
+.flex{ display:flex; }
+.flex-center{ display:flex; align-items:center; justify-content:center; }
+.flex-between{ display:flex; align-items:center; justify-content:space-between; }
+.gap-8 { gap:8px; }
+.gap-16{ gap:16px; }

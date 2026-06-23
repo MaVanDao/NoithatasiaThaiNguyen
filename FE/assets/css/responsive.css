@@ -1,0 +1,38 @@
+/* ============================================================
+   RESPONSIVE — Class tiện ích để ẩn/hiện theo kích thước màn hình
+   (Lưu ý: phần lớn responsive của từng component đã viết sẵn ngay
+   trong layout.css / components.css. File này chỉ chứa các class
+   ẩn/hiện chung, dùng khi cần chỉnh nhanh ngay trong HTML)
+   ============================================================ */
+
+/* Ẩn trên điện thoại (dưới 768px) */
+@media (max-width:767px){
+  .hide-mobile{ display:none !important; }
+}
+
+/* Ẩn trên máy tính bảng (768px–1023px) */
+@media (min-width:768px) and (max-width:1023px){
+  .hide-tablet{ display:none !important; }
+}
+
+/* Ẩn trên máy tính (từ 1024px trở lên) */
+@media (min-width:1024px){
+  .hide-desktop{ display:none !important; }
+}
+
+/* Chỉ hiện trên điện thoại */
+.only-mobile{ display:none; }
+@media (max-width:767px){
+  .only-mobile{ display:block; }
+}
+
+/* Chỉ hiện trên máy tính (từ 1024px) */
+.only-desktop{ display:none; }
+@media (min-width:1024px){
+  .only-desktop{ display:block; }
+}
+@media (max-width: 600px) {
+  .radio-group {
+    grid-template-columns: 1fr;
+  }
+}

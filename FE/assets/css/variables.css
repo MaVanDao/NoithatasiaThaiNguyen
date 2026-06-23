@@ -1,0 +1,36 @@
+/* ============================================================
+   VARIABLES — Toàn bộ màu sắc, font chữ, kích thước dùng chung
+   File này PHẢI load đầu tiên, mọi file CSS khác đều dùng var() từ đây
+   ============================================================ */
+:root{
+  /* Màu thương hiệu */
+  --red:        #CC0000;
+  --red-dark:   #A30000;
+  --black:      #1A1A1A;
+  --white:      #FFFFFF;
+  --amber:      #F5A623;   /* chỉ dùng cho dấu chấm trong slogan */
+
+  /* Màu xám hỗ trợ */
+  --gray-50:    #F7F7F7;
+  --gray-100:   #EFEFEF;
+  --gray-200:   #E0E0E0;
+  --gray-400:   #B0B0B0;
+  --gray-600:   #666666;
+  --gray-800:   #333333;
+
+  /* Màu riêng cho widget Zalo / Messenger — KHÔNG dùng ở nơi khác */
+  --color-zalo:       #0068FF;
+  --color-messenger:  #0084FF;
+
+  /* Font chữ */
+  --font-head: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Kích thước / hiệu ứng dùng chung */
+  --radius:     8px;
+  --shadow:     0 2px 12px rgba(0,0,0,0.08);
+  --shadow-md:  0 6px 24px rgba(0,0,0,0.12);
+  --header-h:   76px;
+  --container:  1280px;
+  --ease:       cubic-bezier(.4,0,.2,1);
+}

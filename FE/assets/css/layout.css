@@ -1,0 +1,125 @@
+/* ============================================================
+   LAYOUT — Khung container, lưới (grid), khoảng cách bố cục
+   File này lo việc "cái gì nằm ở đâu", KHÔNG lo "trông như thế nào"
+   ============================================================ */
+
+.container{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 24px;
+}
+@media (max-width:767px){
+  .container{ padding:0 20px; }
+}
+
+/* Khoảng cách giữa các khu vực trong trang */
+.section{ padding:64px 0; }
+@media (min-width:1024px){ .section{ padding:96px 0; } }
+
+.section-head{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  margin-bottom:32px;
+}
+.section-head-row{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-bottom:32px;
+}
+
+/* Lưới ô sản phẩm: 2 cột mobile / 3 cột tablet / 4 cột desktop */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+@media (min-width:768px){
+  .product-grid{ grid-template-columns:repeat(3,1fr); gap:22px; }
+}
+@media (min-width:1280px){
+  .product-grid{ grid-template-columns:repeat(4,1fr); gap:24px; }
+}
+
+/* Lưới ô dự án thi công: 2 cột mobile/tablet / 3 cột desktop */
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+@media (min-width:768px){
+  .project-grid{ grid-template-columns:repeat(2,1fr); gap:22px; }
+}
+@media (min-width:1280px){
+  .project-grid{ grid-template-columns:repeat(3,1fr); gap:24px; }
+}
+
+/* Khung trang Catalog: có/không có sidebar lọc */
+.catalog-layout{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:36px;
+}
+@media (min-width:1024px){
+  .catalog-layout.has-sidebar{
+    grid-template-columns:240px 1fr;
+  }
+}
+
+/* Lưới ảnh kiểu "thác nước" cho trang chi tiết Thi công */
+.masonry{
+  column-count:2;
+  column-gap:18px;
+}
+@media (min-width:1024px){
+  .masonry{ column-count:3; column-gap:22px; }
+}
+
+/* Khung trang Liên Hệ: cột trái thông tin + cột phải bản đồ */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:40px;
+  margin-top:32px;
+}
+@media (min-width:1024px){
+  .contact-grid{ grid-template-columns:1fr 1.2fr; }
+}
+
+/* Lưới ô nhập trong các form (2 cột trên desktop) */
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+@media (min-width:768px){
+  .form-grid{ grid-template-columns:1fr 1fr; }
+  .form-grid .full{ grid-column:1/-1; }
+}
+
+/* Footer-grid: ĐÃ DỜI sang components.css (gộp chung với toàn bộ
+   CSS footer khác — xem phần FOOTER trong components.css) */
+
+/* Khung trang Chi Tiết Sản Phẩm: Gallery ảnh bên trái + Thông tin bên phải */
+.detail-layout{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:32px;
+  padding:32px 0 56px;
+}
+.detail-layout > div{
+  min-width:0;
+}
+@media (max-width:767px){
+  .detail-layout{
+    gap:24px;
+    padding:24px 0 40px;
+  }
+}
+@media (min-width:1024px){
+  .detail-layout{ grid-template-columns:1fr 1fr; gap:48px; }
+}

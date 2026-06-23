@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sofa — Nội Thất Asia Thái Nguyên</title>
+<meta name="description" content="Sofa Asia Thái Nguyên - Sofa góc, sofa văng, sofa da cao cấp. Giao hàng & lắp đặt tận nơi.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/FE/assets/css/variables.css">
+<link rel="stylesheet" href="/FE/assets/css/reset.css">
+<link rel="stylesheet" href="/FE/assets/css/typography.css">
+<link rel="stylesheet" href="/FE/assets/css/layout.css">
+<link rel="stylesheet" href="/FE/assets/css/components.css">
+<link rel="stylesheet" href="/FE/assets/css/animations.css">
+<link rel="stylesheet" href="/FE/assets/css/utilities.css">
+<link rel="stylesheet" href="/FE/assets/css/responsive.css">
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<div class="container">
+
+  <!-- ============ BREADCRUMB ============ -->
+  <nav class="breadcrumb" aria-label="Đường dẫn">
+    <a href="/FE/pages/index.html">Trang Chủ</a>
+    <span class="sep">›</span>
+    <span>Sản Phẩm</span>
+    <span class="sep">›</span>
+    <span class="current" id="breadcrumb-current">Sofa</span>
+  </nav>
+
+  <!-- ============ TIÊU ĐỀ ============ -->
+  <div class="catalog-head">
+    <h1 class="page-title" id="page-title">Sofa</h1>
+  </div>
+
+  <!-- ============ THANH SẮP XẾP ============ -->
+  <div class="catalog-toolbar">
+    <select class="sort-select" id="sort-select">
+      <option value="newest">Sắp xếp: Mới nhất</option>
+      <option value="price_asc">Sắp xếp: Giá tăng dần</option>
+      <option value="price_desc">Sắp xếp: Giá giảm dần</option>
+    </select>
+  </div>
+
+  <!-- ============ SIDEBAR LỌC + LƯỚI SẢN PHẨM ============ -->
+  <div class="catalog-layout has-sidebar" style="padding-bottom:80px;">
+
+    <aside class="filter-sidebar">
+      <div class="filter-block">
+        <div class="filter-title">Khoảng Giá</div>
+        <input type="range" class="filter-range" id="filter-price"
+               min="500000" max="30000000" step="500000" value="30000000">
+        <div class="filter-range-values">
+          <span>0đ</span>
+          <span id="filter-price-value">30.000.000đ</span>
+        </div>
+      </div>
+    </aside>
+
+    <div>
+      <p id="result-count" style="color:var(--gray-600); font-size:13.5px; margin-bottom:16px;"></p>
+
+      <div class="product-grid" id="product-grid" data-category="sofa"></div>
+
+      <div class="pagination" id="pagination"></div>
+    </div>
+
+  </div>
+</div>
+
+<footer id="site-footer"></footer>
+
+<!-- ============ SCRIPT — PHẢI đúng thứ tự này ============ -->
+<script src="/FE/assets/js/constants/app-config.js"></script>
+<script src="/FE/assets/js/constants/roles.js"></script>
+<script src="/FE/assets/js/constants/routes.js"></script>
+<script src="/FE/assets/js/constants/product-categories.js"></script>
+<script src="/FE/assets/js/constants/service-categories.js"></script>
+<script src="/FE/assets/js/constants/api-endpoints.js"></script>
+
+<script src="/FE/assets/js/utils/storage.js"></script>
+<script src="/FE/assets/js/utils/phone.js"></script>
+<script src="/FE/assets/js/utils/validator.js"></script>
+<script src="/FE/assets/js/utils/formatter.js"></script>
+<script src="/FE/assets/js/utils/debounce.js"></script>
+<script src="/FE/assets/js/utils/helpers.js"></script>
+
+<script src="/FE/assets/js/api/client.js"></script>
+
+<script src="/FE/assets/js/store/auth.store.js"></script>
+<script src="/FE/assets/js/store/user.store.js"></script>
+<script src="/FE/assets/js/store/app.store.js"></script>
+<script src="/FE/assets/js/store/wishlist.store.js"></script>
+
+<script src="/FE/assets/js/components/toast.js"></script>
+<script src="/FE/assets/js/components/modal.js"></script>
+<script src="/FE/assets/js/components/consult-form.js"></script>
+<script src="/FE/assets/js/components/scroll-reveal.js"></script>
+<script src="/FE/assets/js/components/hotline-button.js"></script>
+<script src="/FE/assets/js/components/zalo-widget.js"></script>
+<script src="/FE/assets/js/components/messenger-widget.js"></script>
+<script src="/FE/assets/js/components/navbar.js"></script>
+<script src="/FE/assets/js/components/mobile-menu.js"></script>
+<script src="/FE/assets/js/components/footer.js"></script>
+
+<script src="/FE/assets/js/services/product.service.js"></script>
+
+<script src="/FE/assets/js/pages/san-pham/product-list.js"></script>
+</body>
+</html>

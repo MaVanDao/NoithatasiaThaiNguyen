@@ -1,0 +1,45 @@
+/* ============================================================
+   TYPOGRAPHY — Kiểu chữ tiêu đề dùng lại ở nhiều trang
+   ============================================================ */
+.eyebrow{
+  font-family:var(--font-head);
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--red);
+}
+
+/* Tiêu đề 1 khu vực, VD: "Sản Phẩm Nổi Bật" — viền trái đỏ */
+.section-title{
+  font-family:var(--font-head);
+  font-weight:800;
+  font-size:30px;
+  color:var(--black);
+  padding-left:16px;
+  border-left:4px solid var(--red);
+  line-height:1.2;
+}
+@media (min-width:1024px){
+  .section-title{ font-size:36px; }
+}
+.section-subtitle{
+  color:var(--gray-600);
+  font-size:15px;
+  margin-top:10px;
+  padding-left:16px;
+}
+
+/* Tiêu đề cả trang, VD: "Sofa", "Liên Hệ" — gạch chân đỏ */
+.page-title{
+  font-family:var(--font-head);
+  font-weight:800;
+  font-size:32px;
+  color:var(--black);
+  display:inline-block;
+  padding-bottom:10px;
+  border-bottom:4px solid var(--red);
+}
+@media (min-width:1024px){
+  .page-title{ font-size:42px; }
+}
